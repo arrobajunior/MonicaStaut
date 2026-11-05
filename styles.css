@@ -16,41 +16,37 @@
 @media(max-width:420px){.hero h1{font-size:37px}.hero-actions{gap:10px}.hero-actions .btn{min-height:48px;padding-inline:14px;gap:7px;font-size:11px}.hero-caption{font-size:10px}.pillars-grid{gap:8px}.pillar-card{padding:19px 14px}.topic-list{grid-template-columns:1fr}.about-photo{height:345px}.talks-photo{height:370px}.talks h2{font-size:36px}.closing h2{font-size:42px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
-/* Foto de palestra: recorte integrado ao card, com aproximação suave. */
+/* Foto de palestra: imagem preenche a própria moldura, sem barras internas. */
 .talks-photo {
-  isolation: isolate;
-  overflow: hidden;
-  background: #171120;
+  isolation:isolate;
+  overflow:hidden;
+  background-color:#181329;
+  background-image:url("assets/portrait-speaking.webp");
+  background-size:140% auto;
+  background-position:center 64%;
+  background-repeat:no-repeat;
 }
-.talks-photo::before { content: none; }
-.talks-photo img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 63%;
-  transform: scale(1.85);
-  transform-origin: center center;
-  filter: saturate(.97) contrast(1.03);
-}
-.talks-photo .photo-badge { z-index: 2; }
-
-/* Logomarcas oficiais dentro dos mockups de celular e notebook. */
+.talks-photo::before { content:none; }
+.talks-photo .photo-badge { z-index:2; }
+/* Logo CASA mantida no celular em sua proporção original. */
 .phone-brand-official {
-  display: block;
-  width: 78px;
-  height: 57px;
-  margin: -9px auto -4px;
-  object-fit: contain;
+ display:block;
+ width:78px;
+ height:57px;
+ margin:-9px auto -4px;
+ object-fit:contain;
 }
+/* Notebook utiliza captura real da interface KINDVIA. */
 .laptop-screen {
-  background: radial-gradient(ellipse at 90% 15%,#fdf9ef 0%,transparent 50%),linear-gradient(120deg,#f4f6f3,#fffefb);
+ padding:0;
+ overflow:hidden;
+ background:#fff;
+ display:block;
 }
-.laptop-brand-official {
-  display: block;
-  width: min(87%, 235px);
-  height: 145px;
-  object-fit: contain;
+.laptop-website-shot {
+ display:block;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:center 32%;
 }
