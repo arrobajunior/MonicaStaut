@@ -16,8 +16,23 @@
 @media(max-width:420px){.hero h1{font-size:37px}.hero-actions{gap:10px}.hero-actions .btn{min-height:48px;padding-inline:14px;gap:7px;font-size:11px}.hero-caption{font-size:10px}.pillars-grid{gap:8px}.pillar-card{padding:19px 14px}.topic-list{grid-template-columns:1fr}.about-photo{height:345px}.talks-photo{height:370px}.talks h2{font-size:36px}.closing h2{font-size:42px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
-/* Fotografia de palestra: destaque para o evento inteiro, sem close no rosto. */
-.talks-photo { isolation: isolate; background: #121020; }
-.talks-photo::before { content: ""; position: absolute; inset: -8%; background: url("assets/portrait-speaking.webp") center / cover no-repeat; filter: blur(24px) brightness(.38); transform: scale(1.08); z-index: 0; }
-.talks-photo img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center center; filter: saturate(.93) contrast(1.02); }
+/* Foto de palestra: recorte integrado ao card, com aproximação suave. */
+.talks-photo {
+  isolation: isolate;
+  overflow: hidden;
+  background: #171120;
+}
+.talks-photo::before { content: none; }
+.talks-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 63%;
+  transform: scale(1.18);
+  transform-origin: center center;
+  filter: saturate(.97) contrast(1.03);
+}
 .talks-photo .photo-badge { z-index: 2; }
