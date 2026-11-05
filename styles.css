@@ -31,8 +31,26 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 63%;
-  transform: scale(1.18);
+  transform: scale(1.85);
   transform-origin: center center;
   filter: saturate(.97) contrast(1.03);
 }
 .talks-photo .photo-badge { z-index: 2; }
+
+/* Logomarcas oficiais dentro dos mockups de celular e notebook. */
+.phone-brand-official {
+  display: block;
+  width: 78px;
+  height: 57px;
+  margin: -9px auto -4px;
+  object-fit: contain;
+}
+.laptop-screen {
+  background: radial-gradient(ellipse at 90% 15%,#fdf9ef 0%,transparent 50%),linear-gradient(120deg,#f4f6f3,#fffefb);
+}
+.laptop-brand-official {
+  display: block;
+  width: min(87%, 235px);
+  height: 145px;
+  object-fit: contain;
+}
